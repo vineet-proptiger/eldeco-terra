@@ -40,12 +40,7 @@ const Location = () => {
             <span style={{ color: 'var(--color-gold)' }}>Advantages</span>
           </h2>
           <div style={{ width: '60px', height: '3px', background: 'linear-gradient(90deg, var(--color-gold), var(--color-gold-light))', borderRadius: '2px', margin: '8px auto 12px' }} />
-          <p style={{
-            fontFamily: F_SANS, fontSize: '14px', color: 'var(--color-gold-dark)',
-            maxWidth: '680px', margin: '0 auto', lineHeight: 1.75, fontWeight: '500',
-          }}>
-            Eldeco Terra &amp; Sol enjoys a strategic location in Sector 80 with quick access to NH-48, SPR, Dwarka Expressway, and key city hubs.
-          </p>
+
         </div>
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch">

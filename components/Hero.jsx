@@ -426,8 +426,8 @@ export default function Hero({ setIsOpen }) {
               <span style={{
                 fontFamily:F_SANS, fontSize:'clamp(8px, 2vw, 10px)', fontWeight:700,
                 letterSpacing:'0.15em', textTransform:'uppercase',
-                color:'var(--color-gold)',
-                border:'1px solid var(--color-gold-light, rgba(201,168,76,0.3))',
+                color:'#ffffff',
+                border:'1px solid rgba(255,255,255,0.4)',
                 padding:'4px 10px', smPadding:'6px 14px', borderRadius:'2px',
                 background:'rgba(14,11,8,0.5)', backdropFilter:'blur(8px)',
                 whiteSpace: 'nowrap'
@@ -457,7 +457,7 @@ export default function Hero({ setIsOpen }) {
               fontWeight:800, color:'#fff', lineHeight:1.05, letterSpacing:'-0.02em',
             }}>
               Eldeco Terra<br />
-              <span style={{ color:'var(--color-gold)' }}>&amp; Sol</span>
+              <span style={{ color:'#ffffff' }}>&amp; Sol</span>
             </h1>
           </div>
 
@@ -586,7 +586,7 @@ export default function Hero({ setIsOpen }) {
               <p style={{ fontFamily:F_SANS, fontSize:'11px', fontWeight:700, letterSpacing:'0.18em', textTransform:'uppercase', color:'rgba(255,255,255,0.25)', marginBottom:'4px' }}>
                 Starting at
               </p>
-              <p className="blink-price" style={{ fontFamily:F_JOST, fontSize:'32px', fontWeight:600, color:'var(--color-gold)', lineHeight:1 }}>
+              <p className="blink-price" style={{ fontFamily:F_JOST, fontSize:'32px', fontWeight:600, color:'#ffffff', lineHeight:1 }}>
                 ₹2.9 Cr*
               </p>
             </div>
