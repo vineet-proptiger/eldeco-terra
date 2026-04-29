@@ -133,7 +133,7 @@ const Highlights = ({ setIsOpen }) => (
           fontFamily: F_JOST, fontWeight: '800', fontSize: '26px',
           color: '#111827', margin: 0, letterSpacing: '-0.01em',
         }}>
-          Highlights Gallery:{' '}
+          Project Highlights:{' '}
           <span style={{ color: 'var(--color-gold)' }}>Eldeco Terra &amp; Sol</span>
         </h2>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>

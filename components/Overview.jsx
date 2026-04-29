@@ -206,7 +206,7 @@ const Overview = () => {
             fontSize: '11px', fontWeight: '700', color: 'var(--color-gold)',
             fontFamily: F_JOST, letterSpacing: '0.1em', textTransform: 'uppercase',
             border: '1px solid var(--color-gold-light)', marginBottom: '10px',
-          }}>Sector 80, Gurgaon — New Launch</span>
+          }}>Sector 80, Gurgaon — Pre-Launch</span>
           <h2 style={{
             fontFamily: F_JOST, fontWeight: '800', fontSize: '26px',
             color: '#111827', margin: 0, letterSpacing: '-0.01em',
@@ -293,7 +293,7 @@ const Overview = () => {
                   fontFamily: F_JOST, fontWeight: '800', fontSize: '16px',
                   color: '#fff', margin: '0 0 4px', letterSpacing: '-0.01em'
                 }}>
-                  Get Early Booking Advantage
+                  Avail Pre-Launch Booking Advantage
                 </h3>
                 <p style={{
                   fontFamily: F_SANS, fontSize: '12px',
