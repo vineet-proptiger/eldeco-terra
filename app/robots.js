@@ -5,7 +5,7 @@ export default function robots() {
       allow: '/',
       disallow: '',
     },
-    sitemap: 'https://eldecoterraguragaon.in/sitemap.xml',
+    sitemap: 'https://eldecoterrandsol.in/sitemap.xml',
   }
 }
 

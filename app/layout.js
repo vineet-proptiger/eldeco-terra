@@ -50,11 +50,11 @@ export default function RootLayout({ children }) {
               "@type": "Article",
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://eldecoterraguragaon.in/"
+                "@id": "https://eldecoterrandsol.in/"
               },
               "headline": "Eldeco Terra & Sol | Spacious 3 & 4 BHK Apartments — Sector 80, Gurgaon",
               "description": "Eldeco Terra & Sol — Spacious 3 & 4 BHK Apartments at Sector 80, Gurgaon. By Eldeco Group. Premium amenities, lush greens, excellent connectivity.",
-              "image": "https://eldecoterraguragaon.in/_next/image?url=%2Fimages%2Fhero%2Fbanner1.webp&w=1200&q=75",
+              "image": "https://eldecoterrandsol.in/_next/image?url=%2Fimages%2Fhero%2Fbanner1.webp&w=1200&q=75",
               "author": {
                 "@type": "Organization",
                 "name": "Proptiger Marketing Services Pvt Ltd",

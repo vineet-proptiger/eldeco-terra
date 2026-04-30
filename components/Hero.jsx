@@ -53,18 +53,18 @@ export default function Hero({ setIsOpen }) {
 
       <div style={{
         width: '100%',
-        height: 'calc(100vh - 80px)',
+        minHeight: 'calc(100vh - 80px)',
         marginTop: '80px',
         display: 'flex',
         flexDirection: 'column',
-        overflow: 'hidden',
+        overflow: 'visible',
         background: '#14110D'
       }}>
 
         {/* ══════════════════════════════
             IMAGE STAGE — top 65%
         ══════════════════════════════ */}
-        <div style={{ flex: '0 0 65%', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ flex: '0 0 65%', minHeight: '240px', position: 'relative', overflow: 'hidden' }}>
 
           {/* Carousel track */}
           <div style={{

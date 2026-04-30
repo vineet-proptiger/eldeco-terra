@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const base = 'https://eldecoterraguragaon.in'
+  const base = 'https://eldecoterrandsol.in'
 
   return [
     {
