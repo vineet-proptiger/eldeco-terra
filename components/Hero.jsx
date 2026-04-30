@@ -224,8 +224,8 @@ export default function Hero({ setIsOpen }) {
           }}>
             {[
               { val: '10', lbl: 'Acres\nDevelopment' },
-              { val: '3 & 4 BHK', lbl: 'Config-\nuration' },
-              { val: 'Dec\'27', lbl: 'Possession\nDate' },
+              { val: '3 & 4 BHK', lbl: 'Apartments' },
+              { val: 'Jan\'2031', lbl: 'Possession\nDate' },
               { val: '₹2.9 Cr*', lbl: 'Starting\nPrice' },
             ].map((s, i) => (
               <div key={i} style={{
@@ -253,9 +253,10 @@ export default function Hero({ setIsOpen }) {
             </p>
             {[
               'Spacious 3 & 4 BHK Apartments',
-              'Book Now – at just ₹10 Lacs* EOI',
               'Premium Clubhouse & Modern Amenities',
-              'Excellent Connectivity — NH-48 & Dwarka Expressway',
+              'Seamless access to NH-48 & Dwarka Expressway',
+              'Book Now – at just ₹10 Lacs* EOI',
+
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--color-gold)', flexShrink: 0, opacity: 0.8 }} />
