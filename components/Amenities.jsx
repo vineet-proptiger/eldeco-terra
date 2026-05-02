@@ -36,7 +36,7 @@ const Amenities = ({ setIsOpen }) => {
           </h2>
           <div style={{ width: '60px', height: '3px', background: 'linear-gradient(90deg, var(--color-gold), var(--color-gold-light))', borderRadius: '2px', margin: '8px auto 12px' }} />
           {/* Cascades Club Banner */}
-          
+
         </div>
 
         {/* Grid */}

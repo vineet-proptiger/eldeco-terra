@@ -14,19 +14,16 @@ const INTERVAL = 5500
 
 export default function Hero({ setIsOpen }) {
   const [cur, setCur] = useState(0)
-  const [progress, setProgress] = useState(0)
   const rafRef = useRef(null)
   const startRef = useRef(null)
 
-  // Auto-advance + progress bar
+  // Auto-advance
   useEffect(() => {
-    setProgress(0)
     startRef.current = Date.now()
     cancelAnimationFrame(rafRef.current)
 
     function tick() {
       const pct = Math.min((Date.now() - startRef.current) / INTERVAL * 100, 100)
-      setProgress(pct)
       if (pct < 100) rafRef.current = requestAnimationFrame(tick)
     }
     rafRef.current = requestAnimationFrame(tick)
@@ -185,9 +182,6 @@ export default function Hero({ setIsOpen }) {
             display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px',
             borderRight: '1px solid rgba(255,255,255,0.06)',
           }}>
-            {/* <h2 style={{ fontFamily:F_SERIF, fontSize:'20px', fontWeight:600, color:'#fff', lineHeight:1.15 }}>
-              Waterside <em style={{ fontStyle:'italic', color:'var(--color-gold)' }}>Residences</em>
-            </h2> */}
             <p style={{ fontFamily: F_SANS, fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,0.45)', fontWeight: 300 }}>
               A thoughtfully crafted residential development by{' '}
               <span style={{ color: 'var(--color-gold)', fontWeight: 600 }}>Eldeco Group</span> — beautifully landscaped green gardens and
@@ -256,7 +250,6 @@ export default function Hero({ setIsOpen }) {
               'Premium Clubhouse & Modern Amenities',
               'Seamless access to NH-48 & Dwarka Expressway',
               'Book Now – at just ₹10 Lacs* EOI',
-
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--color-gold)', flexShrink: 0, opacity: 0.8 }} />
