@@ -246,7 +246,7 @@ export default function Hero({ setIsOpen }) {
               Privileged Launch Advantages
             </p>
             {[
-              'Spacious 3 & 4 BHK Apartments',
+              'Lavish 3 & 4 BHK Apartments',
               'Premium Clubhouse & Modern Amenities',
               'Seamless access to NH-48 & Dwarka Expressway',
               'Book Now – at just ₹10 Lacs* EOI',
@@ -266,7 +266,7 @@ export default function Hero({ setIsOpen }) {
           }}>
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontFamily: F_SANS, fontSize: '14.5px', fontWeight: 600, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.06em', marginBottom: '2px' }}>
-                3 &amp; 4 BHK Spacious Apartments
+                3 &amp; 4 BHK Luxury Apartments
               </p>
               <p style={{ fontFamily: F_SANS, fontSize: '11px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '4px' }}>
                 Starting at
