@@ -61,7 +61,7 @@ export default function Hero({ setIsOpen }) {
         {/* ══════════════════════════════
             IMAGE STAGE — top 65%
         ══════════════════════════════ */}
-        <div style={{ flex: '0 0 65%', minHeight: '240px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ flex: 1, minHeight: '240px', position: 'relative', overflow: 'hidden' }}>
 
           {/* Carousel track */}
           <div style={{
@@ -169,7 +169,7 @@ export default function Hero({ setIsOpen }) {
             INFO STRIP — bottom 35%
         ══════════════════════════════ */}
         <div className="flex flex-col lg:flex-row" style={{
-          flex: 1,
+          flex: '0 0 auto',
           background: 'var(--color-bg, #F8F4EE)',
           animation: 'heroSlideUp 0.8s 0.5s cubic-bezier(0.16,1,0.3,1) both',
         }}>
@@ -177,7 +177,7 @@ export default function Hero({ setIsOpen }) {
           {/* A — Project name */}
           <div className="w-full lg:w-[280px]" style={{
             flex: '0 0 auto',
-            padding: '18px 24px',
+            padding: '6px 24px',
             background: 'var(--color-dark, #14110D)',
             display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px',
             borderRight: '1px solid rgba(255,255,255,0.06)',
@@ -223,7 +223,7 @@ export default function Hero({ setIsOpen }) {
               { val: '₹2.9 Cr*', lbl: 'Starting\nPrice' },
             ].map((s, i) => (
               <div key={i} style={{
-                padding: '14px 16px',
+                padding: '5px 16px',
                 display: 'flex', flexDirection: 'column', justifyContent: 'center',
                 borderRight: i % 2 === 0 ? '1px solid rgba(20,17,13,0.1)' : 'none',
                 borderBottom: i < 2 ? '1px solid rgba(20,17,13,0.1)' : 'none',
@@ -238,7 +238,7 @@ export default function Hero({ setIsOpen }) {
 
           {/* C — Advantages */}
           <div style={{
-            flex: 1, padding: '14px 20px',
+            flex: 1, padding: '6px 20px',
             borderRight: '1px solid rgba(20,17,13,0.1)',
             display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px',
           }}>
@@ -260,7 +260,7 @@ export default function Hero({ setIsOpen }) {
 
           {/* D — Price + CTA */}
           <div className="w-full lg:w-[260px]" style={{
-            flex: '0 0 auto', padding: '16px 22px',
+            flex: '0 0 auto', padding: '6px 22px',
             background: 'var(--color-dark, #14110D)',
             display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '10px',
           }}>
