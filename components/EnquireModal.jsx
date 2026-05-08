@@ -76,7 +76,7 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
             </div>
           </div> */}
 
-          <div className="p-4 sm:p-5 flex flex-col justify-center flex-1">
+          <div className="p-4 sm:p-5 pt-8 sm:pt-10 flex flex-col justify-center flex-1">
             <div className="text-center mb-3">
               <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-snug uppercase tracking-tight" style={{ fontFamily: F_JOST }}>
                 Book A Free Site Visit
