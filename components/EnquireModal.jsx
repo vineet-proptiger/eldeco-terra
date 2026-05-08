@@ -1,11 +1,10 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { X } from 'lucide-react'
 import LeadForm from './LeadForm'
-import { popupImage } from '../lib/images'
+// import { popupImage } from '../lib/images'
 
-const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 
 const EnquireModal = ({ isOpen, setIsOpen }) => {
@@ -41,22 +40,22 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
       <div
         className="relative bg-white w-full rounded-2xl overflow-hidden shadow-2xl flex flex-col sm:flex-row"
         style={{
-          maxWidth: '960px',
-          width: '95vw',
-          maxHeight: '95vh',
+          maxWidth: '400px',
+          width: '92vw',
+          maxHeight: '90vh',
           animation: 'slideInRight 0.45s cubic-bezier(0.22,1,0.36,1) forwards',
         }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* LEFT - Image */}
-        <div className="hidden sm:block sm:w-[44%] shrink-0 relative" style={{ background: '#0d1117', minHeight: '100%' }}>
+        {/* <div className="hidden sm:block sm:w-[44%] shrink-0 relative" style={{ background: '#0d1117', minHeight: '100%' }}>
           <Image src={popupImage} alt="Eldeco Terra & Sol" fill className="object-cover" sizes="(max-width: 768px) 0vw, 45vw" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(26,26,46,0.85) 0%, rgba(26,26,46,0.1) 60%)' }} />
           <div className="absolute bottom-0 left-0 right-0 p-5 text-white z-10">
             <p className="text-[10px] font-semibold tracking-[3px] uppercase opacity-80 mb-1" style={{ fontFamily: F_SANS, color: 'var(--color-gold)' }}>Eldeco Terra &amp; Sol</p>
             <p style={{ fontFamily: F_JOST, fontSize: '13px', fontWeight: 500, opacity: 0.85 }}>3 &amp; 4 BHK · Starting ₹2.9 Cr* · Sector 80, Gurgaon</p>
           </div>
-        </div>
+        </div> */}
 
         {/* RIGHT - Form */}
         <div className="flex-1 flex flex-col overflow-y-auto">
@@ -68,42 +67,29 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
           </button>
 
           {/* Mobile strip */}
-          <div className="sm:hidden w-full h-56 relative shrink-0">
+          {/* <div className="sm:hidden w-full h-56 relative shrink-0">
             <Image src={popupImage} alt="Eldeco Terra & Sol" fill className="object-cover" style={{ objectPosition: 'top' }} sizes="100vw" />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(26,26,46,0.6) 0%, transparent 60%)' }} />
             <div className="absolute bottom-3 left-4 text-white z-10">
               <p className="text-[9px] uppercase tracking-[2px] opacity-80" style={{ fontFamily: F_SANS }}>Eldeco Terra &amp; Sol</p>
               <p className="text-[11px] font-medium opacity-85" style={{ fontFamily: F_JOST }}>3 &amp; 4 BHK · Starting ₹2.9 Cr* · Sector 80, Gurgaon</p>
             </div>
-          </div>
+          </div> */}
 
-          <div className="p-6 sm:p-8 flex flex-col justify-center flex-1">
-            <div className="text-center mb-6">
-              <span style={{
-                display: 'inline-block', padding: '4px 16px',
-                background: 'var(--color-gold-bg)', borderRadius: '50px',
-                fontSize: '10px', fontWeight: '700', color: 'var(--color-gold)',
-                fontFamily: F_JOST, letterSpacing: '0.1em', textTransform: 'uppercase',
-                border: '1px solid var(--color-gold-light)', marginBottom: '10px',
-              }}>
-                Exclusive Benefits
-              </span>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 leading-snug uppercase tracking-tight" style={{ fontFamily: F_JOST }}>
+          <div className="p-4 sm:p-5 flex flex-col justify-center flex-1">
+            <div className="text-center mb-3">
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-snug uppercase tracking-tight" style={{ fontFamily: F_JOST }}>
                 Book A Free Site Visit
               </h3>
-              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '6px' }}>
                 <span style={{
-                  display: 'block', width: '36px', height: '3px',
+                  display: 'block', width: '28px', height: '2px',
                   background: 'linear-gradient(90deg, var(--color-gold), var(--color-gold-light))',
                   borderRadius: '2px',
                 }} />
               </div>
             </div>
 
-            <p className="text-center text-[13px] text-gray-500 mb-6" style={{ fontFamily: F_SANS }}>
-              Register Now To Get{' '}
-              <span className="blink-price font-bold" style={{ color: 'var(--color-gold-dark)' }}>Best Offers</span>
-            </p>
             <LeadForm formName="Popup Modal" btnText="Submit Details" />
           </div>
         </div>
