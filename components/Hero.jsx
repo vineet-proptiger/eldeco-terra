@@ -118,7 +118,7 @@ export default function Hero({ setIsOpen }) {
                 letterSpacing: '0.15em', textTransform: 'uppercase',
                 color: '#ffffff',
                 border: '1px solid rgba(255,255,255,0.4)',
-                padding: '4px 10px', smPadding: '6px 14px', borderRadius: '2px',
+                padding: '4px 10px', borderRadius: '2px',
                 background: 'rgba(14,11,8,0.5)', backdropFilter: 'blur(8px)',
                 whiteSpace: 'nowrap'
               }}
@@ -177,7 +177,7 @@ export default function Hero({ setIsOpen }) {
           {/* A — Project name */}
           <div className="w-full lg:w-[280px]" style={{
             flex: '0 0 auto',
-            padding: '6px 24px',
+            padding: '16px 24px',
             background: 'var(--color-dark, #14110D)',
             display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px',
             borderRight: '1px solid rgba(255,255,255,0.06)',
@@ -198,7 +198,7 @@ export default function Hero({ setIsOpen }) {
               ].map((b, i) => (
                 <div key={i} style={{
                   flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px',
-                  padding: '5px 2px',
+                  padding: '10px 4px',
                   border: '1px solid rgba(255,255,255,0.07)',
                   borderRadius: '6px',
                   background: 'rgba(255,255,255,0.04)',
@@ -211,7 +211,7 @@ export default function Hero({ setIsOpen }) {
           </div>
 
           {/* B — Specs 2×2 */}
-          <div className="w-full lg:w-[320px]" style={{
+          <div className="w-full lg:w-[360px]" style={{
             flex: '0 0 auto',
             display: 'grid', gridTemplateColumns: '1fr 1fr',
             borderRight: '1px solid rgba(20,17,13,0.1)',
@@ -223,14 +223,14 @@ export default function Hero({ setIsOpen }) {
               { val: '₹2.9 Cr*', lbl: 'Starting\nPrice' },
             ].map((s, i) => (
               <div key={i} style={{
-                padding: '5px 16px',
+                padding: '22px 28px',
                 display: 'flex', flexDirection: 'column', justifyContent: 'center',
                 borderRight: i % 2 === 0 ? '1px solid rgba(20,17,13,0.1)' : 'none',
                 borderBottom: i < 2 ? '1px solid rgba(20,17,13,0.1)' : 'none',
                 background: 'var(--color-bg, #F8F4EE)',
                 cursor: 'default',
               }}>
-                <p style={{ fontFamily: F_JOST, fontSize: '20px', fontWeight: 700, color: 'var(--color-dark)', lineHeight: 1, marginBottom: '3px' }}>{s.val}</p>
+                <p style={{ fontFamily: F_JOST, fontSize: '20px', fontWeight: 700, color: 'var(--color-dark)', lineHeight: 1, marginBottom: '8px' }}>{s.val}</p>
                 <p style={{ fontFamily: F_SANS, fontSize: '9px', fontWeight: 700, letterSpacing: '0.13em', textTransform: 'uppercase', color: 'var(--color-muted, #7A7268)', lineHeight: 1.35, whiteSpace: 'pre-line' }}>{s.lbl}</p>
               </div>
             ))}
@@ -238,11 +238,11 @@ export default function Hero({ setIsOpen }) {
 
           {/* C — Advantages */}
           <div style={{
-            flex: 1, padding: '6px 20px',
+            flex: 1, padding: '16px 24px',
             borderRight: '1px solid rgba(20,17,13,0.1)',
             display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px',
           }}>
-            <p style={{ fontFamily: F_JOST, fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--color-gold-dark, #8A6E28)', marginBottom: '4px' }}>
+            <p style={{ fontFamily: F_JOST, fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--color-gold-dark, #8A6E28)', marginBottom: '8px' }}>
               Privileged Launch Advantages
             </p>
             {[
@@ -260,9 +260,9 @@ export default function Hero({ setIsOpen }) {
 
           {/* D — Price + CTA */}
           <div className="w-full lg:w-[260px]" style={{
-            flex: '0 0 auto', padding: '6px 22px',
+            flex: '0 0 auto', padding: '16px 24px',
             background: 'var(--color-dark, #14110D)',
-            display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '10px',
+            display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '14px',
           }}>
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontFamily: F_SANS, fontSize: '14.5px', fontWeight: 600, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.06em', marginBottom: '2px' }}>
