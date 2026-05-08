@@ -175,11 +175,11 @@ export default function Hero({ setIsOpen }) {
         }}>
 
           {/* A — Project name */}
-          <div className="w-full lg:w-[280px]" style={{
+          <div className="w-full lg:w-[320px]" style={{
             flex: '0 0 auto',
-            padding: '16px 24px',
+            padding: '24px 32px',
             background: 'var(--color-dark, #14110D)',
-            display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px',
+            display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '12px',
             borderRight: '1px solid rgba(255,255,255,0.06)',
           }}>
             <p style={{ fontFamily: F_SANS, fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,0.45)', fontWeight: 300 }}>
@@ -190,7 +190,7 @@ export default function Hero({ setIsOpen }) {
             </p>
 
             {/* Trust badges */}
-            <div style={{ display: 'flex', gap: '4px', marginTop: '4px' }}>
+            <div style={{ display: 'flex', gap: '4px', marginTop: '8px' }}>
               {[
                 { icon: '🎧', label: 'Call\nBack' },
                 { icon: '🚗', label: 'Site\nVisit' },
@@ -198,7 +198,7 @@ export default function Hero({ setIsOpen }) {
               ].map((b, i) => (
                 <div key={i} style={{
                   flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px',
-                  padding: '10px 4px',
+                  padding: '14px 8px',
                   border: '1px solid rgba(255,255,255,0.07)',
                   borderRadius: '6px',
                   background: 'rgba(255,255,255,0.04)',
@@ -259,10 +259,10 @@ export default function Hero({ setIsOpen }) {
           </div>
 
           {/* D — Price + CTA */}
-          <div className="w-full lg:w-[260px]" style={{
-            flex: '0 0 auto', padding: '16px 24px',
+          <div className="w-full lg:w-[300px]" style={{
+            flex: '0 0 auto', padding: '24px 32px',
             background: 'var(--color-dark, #14110D)',
-            display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '14px',
+            display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '20px',
           }}>
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontFamily: F_SANS, fontSize: '14.5px', fontWeight: 600, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.06em', marginBottom: '2px' }}>
