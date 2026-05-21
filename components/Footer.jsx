@@ -20,7 +20,7 @@ const Footer = () => (
       </div>
       <p style={{ fontSize: '15px', color: '#bbb', fontFamily: F_SANS, lineHeight: 1.8, marginBottom: '32px', textAlign: 'justify' }}
         data-aos="fade-in" data-aos-delay="100">
-        Eldeco Terra &amp; Sol is a premium residential development by Eldeco Group, offering spacious 3 &amp; 4 BHK apartments starting ₹2.9 Cr* at Sector 80, Gurgaon. Thoughtfully designed with lush green landscapes, world-class amenities, and excellent connectivity to NH-48 and Dwarka Expressway — Eldeco Terra &amp; Sol is crafted for those who seek a life of comfort, elegance, and modern living in Gurugram.
+        Eldeco Terra &amp; Sol is a premium residential development by Eldeco Group, offering spacious 3 &amp; 4 BHK apartments starting ₹3.14 Cr* at Sector 80, Gurgaon. Thoughtfully designed with lush green landscapes, world-class amenities, and excellent connectivity to NH-48 and Dwarka Expressway — Eldeco Terra &amp; Sol is crafted for those who seek a life of comfort, elegance, and modern living in Gurugram.
       </p>
     </div>
 

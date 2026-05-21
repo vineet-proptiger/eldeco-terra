@@ -182,7 +182,7 @@ export default function Hero({ setIsOpen }) {
             display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '12px',
             borderRight: '1px solid rgba(255,255,255,0.06)',
           }}>
-            <p style={{ fontFamily: F_SANS, fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,0.45)', fontWeight: 300 }}>
+            <p style={{ fontFamily: F_SANS, fontSize: '13px', lineHeight: 1.6, color: '#ffffff', fontWeight: 300 }}>
               A thoughtfully crafted residential development by{' '}
               <span style={{ color: 'var(--color-gold)', fontWeight: 600 }}>Eldeco Group</span> — beautifully landscaped green gardens and
               apartments at{' '}
@@ -204,7 +204,7 @@ export default function Hero({ setIsOpen }) {
                   background: 'rgba(255,255,255,0.04)',
                 }}>
                   <span style={{ fontSize: '13px', lineHeight: 1 }}>{b.icon}</span>
-                  <span style={{ fontFamily: F_SANS, fontSize: '9px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', textAlign: 'center', lineHeight: 1.2, whiteSpace: 'pre-line' }}>{b.label}</span>
+                  <span style={{ fontFamily: F_SANS, fontSize: '9px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', textAlign: 'center', lineHeight: 1.2, whiteSpace: 'pre-line' }}>{b.label}</span>
                 </div>
               ))}
             </div>
@@ -220,7 +220,7 @@ export default function Hero({ setIsOpen }) {
               { val: '10', lbl: 'Acres\nDevelopment' },
               { val: '3 & 4 BHK', lbl: 'Apartments' },
               { val: 'Jan\'2031', lbl: 'Possession\nDate' },
-              { val: '₹2.9 Cr*', lbl: 'Starting\nPrice' },
+              { val: '₹3.14 Cr*', lbl: 'Starting\nPrice' },
             ].map((s, i) => (
               <div key={i} style={{
                 padding: '22px 28px',
@@ -265,14 +265,14 @@ export default function Hero({ setIsOpen }) {
             display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '20px',
           }}>
             <div style={{ textAlign: 'center' }}>
-              <p style={{ fontFamily: F_SANS, fontSize: '14.5px', fontWeight: 600, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.06em', marginBottom: '2px' }}>
+              <p style={{ fontFamily: F_SANS, fontSize: '14.5px', fontWeight: 600, color: '#ffffff', letterSpacing: '0.06em', marginBottom: '2px' }}>
                 3 &amp; 4 BHK Luxury Apartments
               </p>
-              <p style={{ fontFamily: F_SANS, fontSize: '11px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '4px' }}>
+              <p style={{ fontFamily: F_SANS, fontSize: '11px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', marginBottom: '4px' }}>
                 Starting at
               </p>
               <p className="blink-price" style={{ fontFamily: F_JOST, fontSize: '32px', fontWeight: 600, color: '#ffffff', lineHeight: 1 }}>
-                ₹2.9 Cr*
+                ₹3.14 Cr*
               </p>
             </div>
 
