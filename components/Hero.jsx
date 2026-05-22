@@ -220,7 +220,7 @@ export default function Hero({ setIsOpen }) {
               { val: '10', lbl: 'Acres\nDevelopment' },
               { val: '3 & 4 BHK', lbl: 'Apartments' },
               { val: 'Jan\'2031', lbl: 'Possession\nDate' },
-              { val: '₹3.14 Cr*', lbl: 'Starting\nPrice' },
+              { val: '₹2.9 Cr*', lbl: 'Starting\nPrice' },
             ].map((s, i) => (
               <div key={i} style={{
                 padding: '22px 28px',
@@ -272,7 +272,7 @@ export default function Hero({ setIsOpen }) {
                 Starting at
               </p>
               <p className="blink-price" style={{ fontFamily: F_JOST, fontSize: '32px', fontWeight: 600, color: '#ffffff', lineHeight: 1 }}>
-                ₹3.14 Cr*
+                ₹2.9 Cr*
               </p>
             </div>
 
