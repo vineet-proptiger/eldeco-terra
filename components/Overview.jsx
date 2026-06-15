@@ -11,7 +11,7 @@ const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const F_SERIF = 'var(--font-serif), Cormorant Garamond, serif'
 
-const PREVIEW_TEXT = `Eldeco Terra & Sol is a premium residential project located in Sector 80, Gurugram, offering spacious 3 BHK and 4 BHK luxury apartments designed for modern families. Developed by the trusted Eldeco Group, this upcoming community is planned with a focus on comfort, efficient layouts, open green spaces, and quality construction standards.`
+const PREVIEW_TEXT = `Eldeco Terra & Sol is a premium residential project located in Sector 80, Gurugram, offering spacious 3 BHK and 3.5 BHK luxury apartments designed for modern families. Developed by the trusted Eldeco Group, this upcoming community is planned with a focus on comfort, efficient layouts, open green spaces, and quality construction standards.`
 
 const MORE_TEXT = ` Set in one of the fastest-developing corridors of New Gurgaon, Eldeco Terra & Sol provides a balanced lifestyle with strong connectivity, everyday convenience, and a secure living environment. The project is currently open for Expression of Interest (EOI), with RERA registration in process — making it the right time to invest in a home that promises both quality living and strong future value.`
 

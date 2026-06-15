@@ -33,8 +33,8 @@ const nephilm = localFont({
 })
 
 export const metadata = {
-  title: 'Eldeco Terra & Sol Sector 80 | Spacious 3 & 4 BHK Apartments — Gurgaon',
-  description: 'Eldeco Terra & Sol — Spacious 3 & 4 BHK Apartments at Sector 80, Gurgaon. By Eldeco Group. Premium amenities, lush greens, excellent connectivity. Enquire Now.',
+  title: 'Eldeco Terra & Sol Sector 80 | Spacious 3 & 3.5 BHK Apartments — Gurgaon',
+  description: 'Eldeco Terra & Sol — Spacious 3 & 3.5 BHK Apartments at Sector 80, Gurgaon. By Eldeco Group. Premium amenities, lush greens, excellent connectivity. Enquire Now.',
 }
 
 export default function RootLayout({ children }) {
@@ -53,8 +53,8 @@ export default function RootLayout({ children }) {
                 "@type": "WebPage",
                 "@id": "https://eldecoterrandsol.in/"
               },
-              "headline": "Eldeco Terra & Sol | Spacious 3 & 4 BHK Apartments — Sector 80, Gurgaon",
-              "description": "Eldeco Terra & Sol — Spacious 3 & 4 BHK Apartments at Sector 80, Gurgaon. By Eldeco Group. Premium amenities, lush greens, excellent connectivity.",
+              "headline": "Eldeco Terra & Sol | Spacious 3 & 3.5 BHK Apartments — Sector 80, Gurgaon",
+              "description": "Eldeco Terra & Sol — Spacious 3 & 3.5 BHK Apartments at Sector 80, Gurgaon. By Eldeco Group. Premium amenities, lush greens, excellent connectivity.",
               "image": "https://eldecoterrandsol.in/_next/image?url=%2Fimages%2Fhero%2Fbanner1.webp&w=1200&q=75",
               "author": {
                 "@type": "Organization",

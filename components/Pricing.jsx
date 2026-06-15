@@ -19,7 +19,7 @@ const units = [
     isPopular: false,
   },
   {
-    type: "4 BHK Apartments",
+    type: "3.5 BHK Apartments",
     size: "On Request*",
     price: "Ask For Price",
     oldPrice: null,
@@ -30,6 +30,19 @@ const units = [
       "Premium Gated Community",
     ],
     isPopular: true,
+  },
+  {
+    type: "Pent-House",
+    size: "On Request*",
+    price: "Ask For Price",
+    oldPrice: null,
+    btnText: "Get Cost Sheet",
+    features: [
+      "Spacious & Well-Ventilated Design",
+      "Attractive Payment Plan",
+      "Premium Gated Community",
+    ],
+    isPopular: false,
   },
 ];
 
@@ -70,7 +83,7 @@ const Pricing = ({ setIsOpen }) => {
           <div className="w-20 h-1 mx-auto rounded-full mb-4" style={{ background: GOLD }} />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-6xl mx-auto">
           {units.map((unit, idx) => (
             <div
               key={idx}

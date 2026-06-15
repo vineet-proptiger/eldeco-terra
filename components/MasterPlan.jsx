@@ -9,7 +9,7 @@ const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const plans = [
   { label: 'Site Master Plan',   img: masterplanImages.masterPlan },
   { label: '3 BHK Floor Plan',   img: masterplanImages.bhk3 },
-  { label: '4 BHK Floor Plan',   img: masterplanImages.bhk45 },
+  { label: '3.5 BHK Floor Plan',   img: masterplanImages.bhk45 },
 ]
 
 const MasterPlan = ({ setIsOpen }) => {

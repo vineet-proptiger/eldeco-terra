@@ -218,7 +218,7 @@ export default function Hero({ setIsOpen }) {
           }}>
             {[
               { val: '10', lbl: 'Acres\nDevelopment' },
-              { val: '3 & 4 BHK', lbl: 'Apartments' },
+              { val: '3 & 3.5 BHK', lbl: 'Apartments' },
               { val: 'Jan\'2031', lbl: 'Possession\nDate' },
               { val: '₹2.9 Cr*', lbl: 'Starting\nPrice' },
             ].map((s, i) => (
@@ -246,7 +246,7 @@ export default function Hero({ setIsOpen }) {
               Privileged Launch Advantages
             </p>
             {[
-              'Lavish 3 & 4 BHK Apartments',
+              'Lavish 3 & 3.5 BHK Apartments',
               'Premium Clubhouse & Modern Amenities',
               'Seamless access to NH-48 & Dwarka Expressway',
               'Book Now – at just ₹10 Lacs* EOI',
@@ -266,7 +266,7 @@ export default function Hero({ setIsOpen }) {
           }}>
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontFamily: F_SANS, fontSize: '14.5px', fontWeight: 600, color: '#ffffff', letterSpacing: '0.06em', marginBottom: '2px' }}>
-                3 &amp; 4 BHK Luxury Apartments
+                3 &amp; 3.5 BHK Luxury Apartments
               </p>
               <p style={{ fontFamily: F_SANS, fontSize: '11px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', marginBottom: '4px' }}>
                 Starting at
