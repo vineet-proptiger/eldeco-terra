@@ -33,6 +33,7 @@ const nephilm = localFont({
 })
 
 export const metadata = {
+  metadataBase: new URL('https://eldecoterrandsol.in'),
   title: 'Eldeco Terra & Sol | 3 & 3.5 BHK in Sec 80 Gurgaon',
   description: 'Eldeco Terra & Sol — Spacious 3 & 3.5 BHK Apartments at Sector 80, Gurgaon. By Eldeco Group. Premium amenities, lush greens, excellent connectivity. Enquire Now.',
   icons: {
