@@ -33,8 +33,17 @@ const nephilm = localFont({
 })
 
 export const metadata = {
-  title: 'Eldeco Terra & Sol Sector 80 | Spacious 3 & 3.5 BHK Apartments — Gurgaon',
+  title: 'Eldeco Terra & Sol | 3 & 3.5 BHK in Sec 80 Gurgaon',
   description: 'Eldeco Terra & Sol — Spacious 3 & 3.5 BHK Apartments at Sector 80, Gurgaon. By Eldeco Group. Premium amenities, lush greens, excellent connectivity. Enquire Now.',
+  icons: {
+    icon: '/images/logo/logo.png',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Eldeco Terra & Sol | 3 & 3.5 BHK in Sec 80 Gurgaon',
+    description: 'Eldeco Terra & Sol — Spacious 3 & 3.5 BHK Apartments at Sector 80, Gurgaon. By Eldeco Group.',
+    images: ['/images/hero/banner1.webp'],
+  },
 }
 
 export default function RootLayout({ children }) {
