@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { logoImages } from '../../lib/images'
 import AosInit from '../../components/AosInit'
+import Image from 'next/image'
 
 const GOLD = 'var(--color-gold)'
 const GOLD_DARK = 'var(--color-gold-dark)'
@@ -27,7 +28,14 @@ export default function PrivacyPolicy() {
 
         <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-[80px]">
           <Link href="/" className="flex items-center">
-            <img src={logoImages.tarc} alt="Eldeco Terra & Sol" className="h-10 sm:h-16 w-auto object-contain" />
+            <Image
+              src={logoImages.tarc}
+              alt="Eldeco Terra & Sol"
+              className="h-10 sm:h-16 w-auto object-contain"
+              width={250}
+              height={64}
+              priority
+            />
           </Link>
           <Link
             href="/"

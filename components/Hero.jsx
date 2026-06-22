@@ -85,6 +85,7 @@ export default function Hero({ setIsOpen }) {
                     fill
                     className="object-cover"
                     priority={idx === 0}
+                    fetchPriority={idx === 0 ? "high" : "auto"}
                     sizes="100vw"
                   />
                 </div>

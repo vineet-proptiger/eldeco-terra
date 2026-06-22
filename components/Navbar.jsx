@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { logoImages } from '../lib/images'
+import Image from 'next/image'
 
 const GOLD = 'var(--color-gold)'
 
@@ -18,11 +19,14 @@ const navLinks = [
 
 /* ── Inline SVG Logo ─────────────────────────────────────────── */
 const ProjectLogo = () => (
-  <img
+  <Image
     src={logoImages.tarc}
     alt="Eldeco Terra & Sol"
     className="h-10 md:h-16 w-auto object-contain transition-all"
     style={{ maxWidth: '250px' }}
+    width={250}
+    height={64}
+    priority
   />
 )
 
