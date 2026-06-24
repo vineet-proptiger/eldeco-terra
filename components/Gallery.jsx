@@ -13,10 +13,8 @@ const Gallery = ({ setIsOpen }) => {
   return (
     <section id="gallery" style={{
       padding: '56px 0',
-      background: '#f8f9fa',
-      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 2 L46 24 L24 46 L2 24 Z' fill='none' stroke='%23e5e7eb' stroke-width='0.5'/%3E%3C/svg%3E")`,
-      backgroundSize: '48px 48px',
-      borderBottom: '1px solid #e5e7eb',
+      background: '#fff',
+      borderBottom: '1px solid #f0ede6',
     }}>
       <div className="container mx-auto px-4 md:px-8">
 
@@ -31,7 +29,7 @@ const Gallery = ({ setIsOpen }) => {
           }}>Visual Tour — Eldeco Terra &amp; Sol</span>
           <h2 style={{
             fontFamily: F_JOST, fontWeight: '800', fontSize: '26px',
-            color: '#111827', margin: '0 0 6px', letterSpacing: '-0.01em',
+            color: '#684C1B', margin: '0 0 6px', letterSpacing: '-0.01em',
           }}>
             A Life That{' '}
             <span style={{ color: 'var(--color-gold)' }}>Awaits For You</span>

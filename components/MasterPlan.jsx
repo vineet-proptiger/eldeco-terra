@@ -18,8 +18,8 @@ const MasterPlan = ({ setIsOpen }) => {
   return (
     <section id="masterplan" style={{
       padding: '56px 0',
-      background: '#ffffff',
-      borderBottom: '1px solid #f0f0f0',
+      background: '#fff',
+      borderBottom: '1px solid #e5e7eb',
     }}>
       <div className="container mx-auto px-4 md:px-8">
 
@@ -34,7 +34,7 @@ const MasterPlan = ({ setIsOpen }) => {
           }}>Sector 80, Gurgaon — Layout &amp; Configuration</span>
           <h2 style={{
             fontFamily: F_JOST, fontWeight: '800', fontSize: '26px',
-            color: '#111827', margin: '0 0 6px', letterSpacing: '-0.01em',
+            color: '#3A2A0E', margin: '0 0 6px', letterSpacing: '-0.01em',
           }}>
             Floor Plans &amp;{' '}
             <span style={{ color: 'var(--color-gold)' }}>Layout</span>

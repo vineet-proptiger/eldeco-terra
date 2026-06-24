@@ -1,303 +1,415 @@
-
-
-
 'use client'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { heroImages } from '../lib/images'
 
-const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
-const F_SANS = 'var(--font-sans), "Open Sans", sans-serif'
+const slides = [
+  { img: heroImages.banner },
+  { img: heroImages.banner2 },
+  { img: heroImages.banner3 }
+]
 
-const slides = [heroImages.banner, heroImages.banner2]
-const INTERVAL = 5500
+const Hero = ({ setIsOpen }) => {
+  const [currentSlide, setCurrentSlide] = useState(0)
 
-export default function Hero({ setIsOpen }) {
-  const [cur, setCur] = useState(0)
-  const rafRef = useRef(null)
-  const startRef = useRef(null)
-
-  // Auto-advance
   useEffect(() => {
-    startRef.current = Date.now()
-    cancelAnimationFrame(rafRef.current)
-
-    function tick() {
-      const pct = Math.min((Date.now() - startRef.current) / INTERVAL * 100, 100)
-      if (pct < 100) rafRef.current = requestAnimationFrame(tick)
-    }
-    rafRef.current = requestAnimationFrame(tick)
-
-    const timer = setTimeout(() => setCur(p => (p + 1) % slides.length), INTERVAL)
-    return () => { clearTimeout(timer); cancelAnimationFrame(rafRef.current) }
-  }, [cur])
-
-  const goTo = (idx) => setCur(idx)
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [])
 
   return (
-    <>
-      {/* ── KEYFRAMES ── */}
-      <style>{`
-        @keyframes heroFadeDown { from{opacity:0;transform:translateY(-12px)} to{opacity:1;transform:translateY(0)} }
-        @keyframes heroRiseUp   { from{opacity:0;transform:translateY(22px)}  to{opacity:1;transform:translateY(0)} }
-        @keyframes heroSlideUp  { from{opacity:0;transform:translateY(30px)}  to{opacity:1;transform:translateY(0)} }
-        @keyframes livepulse {
-          0%  { box-shadow:0 0 0 0 rgba(74,222,128,0.6); }
-          70% { box-shadow:0 0 0 6px rgba(74,222,128,0); }
-          100%{ box-shadow:0 0 0 0 rgba(74,222,128,0); }
+    <section className="hero-container">
+      <style dangerouslySetInnerHTML={{ __html: `
+        .hero-container {
+          position: relative;
+          margin-top: 80px;
+          height: auto;
+          overflow: hidden;
+          background: #111;
+          display: block;
         }
-      `}</style>
 
-      <div style={{
-        width: '100%',
-        minHeight: 'calc(100vh - 80px)',
-        marginTop: '80px',
-        display: 'flex',
-        flexDirection: 'column',
-        overflow: 'visible',
-        background: '#14110D'
-      }}>
+        /* Dark gradient overlay — bottom heavy so text is legible */
+        .hero-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to right,
+            rgba(0,0,0,0.72) 0%,
+            rgba(0,0,0,0.45) 55%,
+            rgba(0,0,0,0.10) 100%
+          );
+          z-index: 2;
+          pointer-events: none;
+        }
 
-        {/* ══════════════════════════════
-            IMAGE STAGE — top 65%
-        ══════════════════════════════ */}
-        <div style={{ flex: 1, minHeight: '240px', position: 'relative', overflow: 'hidden' }}>
+        /* Content block — sits over the image */
+        .hero-content {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 10;
+          padding: 0 44px 72px;
+        }
 
-          {/* Carousel track */}
-          <div style={{
-            position: 'absolute', inset: 0,
-            display: 'flex',
-            transform: `translateX(-${cur * 100}%)`,
-            transition: 'transform 1s cubic-bezier(0.86,0,0.07,1)',
-          }}>
-            {slides.map((src, idx) => (
-              <div key={idx} style={{
-                flex: '0 0 100%', height: '100%', position: 'relative', overflow: 'hidden',
-              }}>
-                <div style={{
-                  position: 'absolute', inset: '-3%',
-                  transform: cur === idx ? 'scale(1.06)' : 'scale(1)',
-                  transition: 'transform 8s ease-out',
-                }}>
-                  <Image
-                    src={src}
-                    alt={`Eldeco Terra & Sol ${idx + 1}`}
-                    fill
-                    className="object-cover"
-                    priority={idx === 0}
-                    fetchPriority={idx === 0 ? "high" : "auto"}
-                    sizes="100vw"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+        /* Main title */
+        .hero-title {
+          font-family: var(--font-jost), Montserrat, sans-serif;
+          font-size: clamp(22px, 3vw, 42px);
+          font-weight: 800;
+          color: #fff;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+          line-height: 1.08;
+          margin: 0 0 6px;
+          text-shadow: 0 2px 16px rgba(0,0,0,0.5);
+        }
 
-          {/* Light bottom vignette */}
-          <div style={{
-            position: 'absolute', bottom: 0, left: 0, right: 0, height: '45%', zIndex: 3,
-            background: 'linear-gradient(to top, rgba(20,17,13,0.82) 0%, rgba(20,17,13,0.18) 60%, transparent 100%)',
-            pointerEvents: 'none',
-          }} />
+        /* Subtitle */
+        .hero-subtitle {
+          font-family: var(--font-jost), Montserrat, sans-serif;
+          font-size: clamp(11px, 1.4vw, 18px);
+          font-weight: 600;
+          color: #fff;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin: 0 0 12px;
+          opacity: 0.92;
+          text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+        }
 
-          {/* Top nav */}
-          <nav
-            className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between p-3 sm:p-6 lg:p-10"
-            style={{
-              background: 'linear-gradient(to bottom, rgba(14,11,8,0.65) 0%, transparent 100%)',
-              animation: 'heroFadeDown 0.7s 0.2s ease both',
-            }}
+        /* Price line */
+        .hero-price-line {
+          font-family: var(--font-sans), Open Sans, sans-serif;
+          font-size: clamp(13px, 1.5vw, 18px);
+          color: rgba(255,255,255,0.88);
+          margin: 0 0 22px;
+          line-height: 1.4;
+        }
+
+        @keyframes heroPriceBlink {
+          0%, 75% { 
+            opacity: 1; 
+            text-shadow: 0 0 8px rgba(255,255,255,0.6); 
+          }
+          76%, 100% { 
+            opacity: 0; 
+            text-shadow: none; 
+          }
+        }
+
+        .hero-price-amt {
+          font-family: var(--font-jost), Montserrat, sans-serif;
+          font-size: clamp(20px, 3vw, 36px);
+          font-weight: 800;
+          color: #fff;
+          animation: heroPriceBlink 1.4s infinite;
+          display: inline-block;
+        }
+
+        /* CTA Row */
+        .hero-cta-row {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          flex-wrap: wrap;
+        }
+
+        /* Hero buttons use global btn-brand / btn-gold-outline classes */
+
+        /* First button — white text + white border on dark hero bg */
+        .hero-btn-one {
+          color: #fff !important;
+          border-color: rgba(255,255,255,0.9) !important;
+          background: transparent !important;
+        }
+        .hero-btn-one:hover {
+          background: var(--color-brand) !important;
+          color: #fff !important;
+          border-color: var(--color-brand) !important;
+        }
+
+        /* RERA text */
+        .hero-rera {
+          font-family: var(--font-sans), Open Sans, sans-serif;
+          font-size: 11.5px;
+          color: rgba(255,255,255,0.75);
+          white-space: nowrap;
+        }
+
+        .hero-slider-wrapper {
+          width: 100%;
+          height: 100%;
+        }
+        .slide-layer {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          transition: opacity 1.2s ease-in-out;
+          pointer-events: none;
+        }
+        .slide-layer.active {
+          opacity: 1;
+          pointer-events: auto;
+        }
+
+        .hero-image {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        /* ─── Desktop ─── */
+        @media (min-width: 1024px) {
+          .hero-container {
+            aspect-ratio: 21/9;
+          }
+          .slide-layer {
+            position: absolute;
+            height: 100%;
+          }
+          .hero-image {
+            height: 100%;
+            object-fit: cover;
+            object-position: center 80%;
+          }
+        }
+
+        .carousel-dots {
+          position: absolute;
+          bottom: 24px;
+          right: 44px;
+          display: flex;
+          gap: 8px;
+          z-index: 20;
+        }
+        .carousel-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.4);
+          cursor: pointer;
+          transition: background 0.3s;
+        }
+        .carousel-dot.active {
+          background: #fff;
+        }
+
+        /* ─── Tablet ─── */
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .hero-container {
+            aspect-ratio: 16/7;
+          }
+          .slide-layer {
+            position: absolute;
+            height: 100%;
+          }
+          .hero-image {
+            height: 100%;
+            object-fit: cover;
+            object-position: center 80%;
+          }
+          .hero-content {
+            padding: 0 28px 56px !important;
+          }
+        }
+
+        /* ─── Mobile ─── */
+        @media (max-width: 767px) {
+          .hero-container {
+            margin-top: 0px !important;
+            padding-top: 80px !important;
+            height: auto !important;
+            display: flex !important;
+            flex-direction: column !important;
+            background: #FFF9E6 !important;
+          }
+          
+
+
+          .hero-overlay {
+            display: none !important;
+          }
+
+          .hero-content {
+            position: relative !important;
+            background: #FFF9E6 url('/images/hero/leaf-bg.png') no-repeat center center !important;
+            background-size: contain !important;
+            padding: 24px 20px 28px !important;
+          }
+
+          .hero-title, .hero-subtitle, .hero-price-line, .hero-price-amt, .hero-bullet-text {
+            color: #111827 !important;
+            text-shadow: none !important;
+          }
+
+          .hero-subtitle {
+            font-size: 16px !important;
+          }
+
+          .hero-price-line {
+            font-size: 17px !important;
+          }
+          
+          .hero-subtitle span {
+            color: #374151 !important;
+          }
+
+          .hero-bullet-item svg {
+            background-color: #111827 !important;
+            stroke: #FCE3A1 !important;
+          }
+
+          .hero-cta-row {
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 12px !important;
+            width: 100%;
+          }
+
+          .hero-cta-row > button,
+          .hero-cta-row > a {
+            width: 100% !important;
+            justify-content: center !important;
+            text-align: center;
+            padding: 12px 10px !important;
+            font-size: 11px !important;
+            white-space: normal !important;
+            box-shadow: none !important;
+          }
+          
+          .hero-cta-row > a.btn-brand {
+            background: linear-gradient(90deg, #D4AF37 0%, #F9E08A 100%) !important;
+            color: #111827 !important;
+            border-color: transparent !important;
+            font-weight: 800 !important;
+          }
+
+          .hero-btn-one {
+            color: #111827 !important;
+            border-color: #111827 !important;
+          }
+
+          .hero-rera {
+            font-size: 10px !important;
+          }
+
+          .carousel-dots {
+            bottom: unset;
+            top: 90px;
+            right: 12px;
+          }
+        }
+      `}} />
+
+      {/* ── Slide Wrapper (Grid to stack slides for smooth crossfade) ── */}
+      <div className="hero-slider-wrapper desktop-carousel" style={{ display: 'grid' }}>
+        {slides.map((slide, index) => (
+          <div 
+            key={index} 
+            className={`slide-layer ${index === currentSlide ? 'active' : ''}`}
+            style={{ gridArea: '1 / 1 / 2 / 2' }}
           >
-
-
-            {/* New Launch Badge — Right */}
-            <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-3 w-full sm:w-auto"
-              style={{ animation: 'heroFadeDown 0.7s 0.2s ease both' }}
-            >
-              <span style={{
-                fontFamily: F_SANS, fontSize: 'clamp(8px, 2vw, 10px)', fontWeight: 700,
-                letterSpacing: '0.15em', textTransform: 'uppercase',
-                color: '#ffffff',
-                border: '1px solid rgba(255,255,255,0.4)',
-                padding: '4px 10px', borderRadius: '2px',
-                background: 'rgba(14,11,8,0.5)', backdropFilter: 'blur(8px)',
-                whiteSpace: 'nowrap'
-              }}
-                className="px-2 py-1 sm:px-4 sm:py-1.5"
-              >
-                ✦ New Launch · Sector 80, Gurgaon
-              </span>
-            </div>
-          </nav>
-
-          {/* Project title overlaid on image */}
-          <div style={{
-            position: 'absolute', bottom: 0, left: 0, zIndex: 5,
-            padding: '0 40px 22px',
-            animation: 'heroRiseUp 0.9s 0.3s cubic-bezier(0.16,1,0.3,1) both',
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-              <span style={{ display: 'block', width: '28px', height: '1px', background: 'var(--color-gold)', opacity: 0.8 }} />
-              <span style={{ fontFamily: F_SANS, fontSize: '10px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--color-gold)' }}>
-                Sector 80, Gurgaon
-              </span>
-            </div>
-            <h1 style={{
-              fontFamily: F_JOST,
-              fontSize: 'clamp(28px, 3.4vw, 52px)',
-              fontWeight: 800, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.02em',
-            }}>
-              Eldeco Terra <span style={{ color: '#ffffff' }}>&amp; Sol</span>
-            </h1>
+            <Image
+              src={slide.img}
+              alt={`Banner ${index + 1}`}
+              width={1920}
+              height={800}
+              className="hero-image"
+              priority={index === 0}
+              sizes="100vw"
+            />
           </div>
-
-          {/* Pip dots */}
-          <div style={{ position: 'absolute', bottom: '20px', right: '40px', zIndex: 6, display: 'flex', gap: '7px' }}>
-            {slides.map((_, idx) => (
-              <button key={idx} onClick={() => goTo(idx)} style={{
-                height: '2px', border: 'none', borderRadius: '1px', cursor: 'pointer', padding: 0,
-                width: cur === idx ? '40px' : '22px',
-                background: cur === idx ? 'var(--color-gold)' : 'rgba(255,255,255,0.3)',
-                transition: 'all 0.4s ease',
-              }} />
-            ))}
-          </div>
-
-          {/* Progress bar removed */}
-        </div>
-
-        {/* ══════════════════════════════
-            INFO STRIP — bottom 35%
-        ══════════════════════════════ */}
-        <div className="flex flex-col lg:flex-row" style={{
-          flex: '0 0 auto',
-          background: 'var(--color-bg, #F8F4EE)',
-          animation: 'heroSlideUp 0.8s 0.5s cubic-bezier(0.16,1,0.3,1) both',
-        }}>
-
-          {/* A — Project name */}
-          <div className="w-full lg:w-[320px]" style={{
-            flex: '0 0 auto',
-            padding: '24px 32px',
-            background: 'var(--color-dark, #14110D)',
-            display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '12px',
-            borderRight: '1px solid rgba(255,255,255,0.06)',
-          }}>
-            <p style={{ fontFamily: F_SANS, fontSize: '13px', lineHeight: 1.6, color: '#ffffff', fontWeight: 300 }}>
-              A thoughtfully crafted residential development by{' '}
-              <span style={{ color: 'var(--color-gold)', fontWeight: 600 }}>Eldeco Group</span> — beautifully landscaped green gardens and
-              apartments at{' '}
-              <span style={{ color: 'var(--color-gold)', fontWeight: 600 }}>Sector 80, Gurgaon</span>.
-            </p>
-
-            {/* Trust badges */}
-            <div style={{ display: 'flex', gap: '4px', marginTop: '8px' }}>
-              {[
-                { icon: '🎧', label: 'Call\nBack' },
-                { icon: '🚗', label: 'Site\nVisit' },
-                { icon: '🏷️', label: 'Best\nPrice' },
-              ].map((b, i) => (
-                <div key={i} style={{
-                  flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px',
-                  padding: '14px 8px',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  borderRadius: '6px',
-                  background: 'rgba(255,255,255,0.04)',
-                }}>
-                  <span style={{ fontSize: '13px', lineHeight: 1 }}>{b.icon}</span>
-                  <span style={{ fontFamily: F_SANS, fontSize: '9px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', textAlign: 'center', lineHeight: 1.2, whiteSpace: 'pre-line' }}>{b.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* B — Specs 2×2 */}
-          <div className="w-full lg:w-[360px]" style={{
-            flex: '0 0 auto',
-            display: 'grid', gridTemplateColumns: '1fr 1fr',
-            borderRight: '1px solid rgba(20,17,13,0.1)',
-          }}>
-            {[
-              { val: '10', lbl: 'Acres\nDevelopment' },
-              { val: '3 & 3.5 BHK', lbl: 'Apartments' },
-              { val: 'Jan\'2031', lbl: 'Possession\nDate' },
-              { val: '₹2.9 Cr*', lbl: 'Starting\nPrice' },
-            ].map((s, i) => (
-              <div key={i} style={{
-                padding: '22px 28px',
-                display: 'flex', flexDirection: 'column', justifyContent: 'center',
-                borderRight: i % 2 === 0 ? '1px solid rgba(20,17,13,0.1)' : 'none',
-                borderBottom: i < 2 ? '1px solid rgba(20,17,13,0.1)' : 'none',
-                background: 'var(--color-bg, #F8F4EE)',
-                cursor: 'default',
-              }}>
-                <p style={{ fontFamily: F_JOST, fontSize: '20px', fontWeight: 700, color: 'var(--color-dark)', lineHeight: 1, marginBottom: '8px' }}>{s.val}</p>
-                <p style={{ fontFamily: F_SANS, fontSize: '9px', fontWeight: 700, letterSpacing: '0.13em', textTransform: 'uppercase', color: 'var(--color-muted, #7A7268)', lineHeight: 1.35, whiteSpace: 'pre-line' }}>{s.lbl}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* C — Advantages */}
-          <div style={{
-            flex: 1, padding: '16px 24px',
-            borderRight: '1px solid rgba(20,17,13,0.1)',
-            display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px',
-          }}>
-            <p style={{ fontFamily: F_JOST, fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--color-gold-dark, #8A6E28)', marginBottom: '8px' }}>
-              Privileged Launch Advantages
-            </p>
-            {[
-              'Lavish 3 & 3.5 BHK Apartments',
-              'Premium Clubhouse & Modern Amenities',
-              'Seamless access to NH-48 & Dwarka Expressway',
-              'Book Now – at just ₹10 Lacs* EOI',
-            ].map((item, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--color-gold)', flexShrink: 0, opacity: 0.8 }} />
-                <span style={{ fontFamily: F_SANS, fontSize: '13.5px', fontWeight: 500, color: 'var(--color-dark)' }}>{item}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* D — Price + CTA */}
-          <div className="w-full lg:w-[300px]" style={{
-            flex: '0 0 auto', padding: '24px 32px',
-            background: 'var(--color-dark, #14110D)',
-            display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '20px',
-          }}>
-            <div style={{ textAlign: 'center' }}>
-              <p style={{ fontFamily: F_SANS, fontSize: '14.5px', fontWeight: 600, color: '#ffffff', letterSpacing: '0.06em', marginBottom: '2px' }}>
-                3 &amp; 3.5 BHK Luxury Apartments
-              </p>
-              <p style={{ fontFamily: F_SANS, fontSize: '11px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', marginBottom: '4px' }}>
-                Starting at
-              </p>
-              <p className="blink-price" style={{ fontFamily: F_JOST, fontSize: '32px', fontWeight: 600, color: '#ffffff', lineHeight: 1 }}>
-                ₹2.9 Cr*
-              </p>
-            </div>
-
-            <button
-              onClick={() => setIsOpen(true)}
-              style={{
-                width: '100%', padding: '12px',
-                background: 'var(--color-gold)', color: '#fff',
-                border: 'none', borderRadius: '6px',
-                fontFamily: F_JOST, fontSize: '12.5px', fontWeight: 700,
-                letterSpacing: '0.10em', textTransform: 'uppercase', cursor: 'pointer',
-                boxShadow: '0 4px 18px rgba(201,168,76,0.4)',
-                transition: 'opacity 0.2s, transform 0.15s',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.opacity = '0.88'; e.currentTarget.style.transform = 'translateY(-1px)' }}
-              onMouseLeave={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'translateY(0)' }}
-            >
-              Request Brochure
-            </button>
-
-          </div>
-
-        </div>
+        ))}
       </div>
-    </>
+
+
+
+      {/* ── Dark overlay for text legibility ── */}
+      <div className="hero-overlay" />
+
+      {/* ── Content overlay ── */}
+      <div className="hero-content">
+
+        {/* Main Heading */}
+        <h1 className="hero-title">
+          Eldeco Terra &amp; Sol
+        </h1>
+
+        {/* Subtitle */}
+        <p className="hero-subtitle">
+          <span style={{ fontSize: '0.85em', fontWeight: 500, textTransform: 'none' }}>At Sector 80, Gurgaon</span>
+        </p>
+        {/* Bullet Points */}
+        <div className="hero-bullets" style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          {[
+            'Eldeco Terra & Sol',
+            'Lavish 3 & 3.5 BHK Apartments',
+            'Seamless access to NH-48 & Dwarka Expressway',
+            'Book Now – at just ₹10 Lacs* EOI'
+          ].map((text, i) => (
+            <div key={i} className="hero-bullet-item" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand, #C9A96E)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, backgroundColor: '#fff', borderRadius: '50%', padding: '2px' }}>
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span className="hero-bullet-text" style={{ color: '#fff', fontFamily: 'var(--font-sans), Open Sans, sans-serif', fontSize: 'clamp(13px, 1.5vw, 18px)', fontWeight: '500', letterSpacing: '0.02em', textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
+                {text}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Price Line (Moved just above buttons) */}
+        <p className="hero-price-line">
+          3 &amp; 3.5 BHK Luxury Apartments Starting at&nbsp;
+          <span className="hero-price-amt">₹ 2.9 Cr*</span>
+        </p>
+
+        {/* CTA Row */}
+        <div className="hero-cta-row">
+
+          {/* Button 1 — Unlock Pricing: white text on dark hero bg */}
+          <button
+            onClick={() => setIsOpen(true)}
+            className="btn-gold-outline hero-btn-one"
+            style={{ fontSize: '12px', padding: '11px 22px' }}
+          >
+            Unlock Pricing &amp; Floor Plans
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" strokeWidth="2.5"
+              strokeLinecap="round" strokeLinejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </button>
+
+          {/* Button 2 — WhatsApp (global btn-brand) */}
+          <a
+            href="https://wa.me/919718344024?text=Hi%20I%20am%20interested%20in%20Eldeco%20Terra%20%26%20Sol%20Sector%2080%20Gurgaon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-brand"
+            style={{ fontSize: '12px', padding: '11px 22px' }}
+          >
+            {/* Calendar icon */}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Schedule Site Visit
+          </a>
+
+        </div>
+
+      </div>
+    </section>
   )
 }
+
+export default Hero

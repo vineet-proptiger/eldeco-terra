@@ -83,14 +83,15 @@ export default function RootLayout({ children }) {
             })
           }}
         />
+        <script
+          id="gtag-init"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];\nwindow.dataLayer.push({ 'city': '${CITY_DISPLAY}' });\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());`
+          }}
+        />
       </head>
       <body className={`${openSans.variable} ${montserrat.variable} ${cormorant.variable} ${nephilm.variable} font-sans text-dark antialiased`}>
-        <Script id="gtag-init" strategy="lazyOnload">
-          {`window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({ 'city': '${CITY_DISPLAY}' });
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());`}
-        </Script>
+
         {children}
       </body>
     </html>

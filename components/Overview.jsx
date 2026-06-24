@@ -196,10 +196,8 @@ const EarlyForm = () => {
 const Overview = () => {
   return (
     <section id="overview" className="!pt-1 !pb-4 sm:!py-10" style={{
-      background: '#f8f9fa',
-      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 2 L46 24 L24 46 L2 24 Z' fill='none' stroke='%23e5e7eb' stroke-width='0.5'/%3E%3C/svg%3E")`,
-      backgroundSize: '48px 48px',
-      borderBottom: '1px solid #e5e7eb',
+      background: '#fff',
+      borderBottom: '1px solid #f0ede6',
     }}>
       <div className="container mx-auto px-4 md:px-8">
 
@@ -214,7 +212,7 @@ const Overview = () => {
           }}>Sector 80, Gurgaon — Pre-Launch</span>
           <h2 style={{
             fontFamily: F_JOST, fontWeight: '800', fontSize: '26px',
-            color: '#111827', margin: 0, letterSpacing: '-0.01em',
+            color: '#3A2A0E', margin: 0, letterSpacing: '-0.01em',
           }}>
             Eldeco Terra &amp; Sol <span style={{ color: 'var(--color-gold)' }}>Overview</span>
           </h2>
@@ -271,7 +269,7 @@ const Overview = () => {
             }}>
               {/* Description */}
               <p style={{
-                color: '#374151', fontFamily: F_SANS, lineHeight: 1.85,
+                color: '#4A4540', fontFamily: F_SANS, lineHeight: 1.85,
                 fontSize: '14px', margin: 0, textAlign: 'justify',
               }}>
                 {PREVIEW_TEXT}{MORE_TEXT}

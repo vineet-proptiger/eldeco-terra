@@ -115,8 +115,8 @@ const HighlightCard = ({ item, idx, setIsOpen }) => {
 const Highlights = ({ setIsOpen }) => (
   <section id="highlights" style={{
     padding: '56px 0',
-    background: '#ffffff',
-    borderBottom: '1px solid #f0f0f0',
+    background: '#EAE5DC',
+    borderBottom: '1px solid #D5C2A8',
   }}>
     <div className="container mx-auto px-4 md:px-8">
 
@@ -131,7 +131,7 @@ const Highlights = ({ setIsOpen }) => (
         }}>Sector 80, Gurgaon — Project Excellence</span>
         <h2 style={{
           fontFamily: F_JOST, fontWeight: '800', fontSize: '26px',
-          color: '#111827', margin: 0, letterSpacing: '-0.01em',
+          color: '#684C1B', margin: 0, letterSpacing: '-0.01em',
         }}>
           Project Highlights:{' '}
           <span style={{ color: 'var(--color-gold)' }}>Eldeco Terra &amp; Sol</span>

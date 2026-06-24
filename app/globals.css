@@ -8,15 +8,24 @@
    THEME VARIABLES — Lodha (Golden Amber & Charcoal Theme)
    ═══════════════════════════════════════════════════════════════ */
 :root {
-  /* ── Green Accent Palette ── */
-  --color-gold: #0C693A;
-  /* Primary accent color */
-  --color-gold-light: #1A8A50;
-  /* Lighter vibrant variant */
-  --color-gold-dark: #084D2B;
-  /* Deeper variant  */
-  --color-gold-bg: #E8F5EE;
-  /* Tinted background variant */
+  /* ── Brand Gold Theme ── */
+  --color-gold: #C9A96E;        
+  --color-gold-light: #d8be8d;
+  --color-gold-dark: #b89552;
+  --color-gold-bg: rgba(201, 169, 110, 0.1);     
+
+  /* ── Brand Primary ── */
+  --color-brand: #C9A96E;
+  --color-brand-hover: #b89552;
+  --color-brand-light: rgba(201, 169, 110, 0.08);
+
+  /* ── Brown Text (nav links, headings) ── */
+  --color-nav-text: #684C1B;
+  --color-heading-brown: #3A2A0E;
+
+  /* ── Section Backgrounds ── */
+  --color-cream-bg: #EAE5DC;
+  --color-border-gold: #D5C2A8;
 
   /* ── Charcoal Gray Primary Palette ── */
   --color-primary: #6D6E70;
@@ -41,11 +50,11 @@
   --btn-radius-pill: 50px;
 
   /* ── Shadows ── */
-  --shadow-sm: 0 2px 8px rgba(12, 105, 58, 0.08);
-  --shadow-md: 0 8px 24px rgba(12, 105, 58, 0.14);
-  --shadow-lg: 0 20px 48px rgba(12, 105, 58, 0.18);
+  --shadow-sm: 0 2px 8px rgba(201, 169, 110, 0.08);
+  --shadow-md: 0 8px 24px rgba(201, 169, 110, 0.14);
+  --shadow-lg: 0 20px 48px rgba(201, 169, 110, 0.18);
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.07);
-  --color-shadow-inner: rgba(12, 105, 58, 0.10);
+  --color-shadow-inner: rgba(201, 169, 110, 0.10);
 }
 
 /* ─── Keyframes ─────────────────────────────────────────────── */
@@ -92,11 +101,11 @@
 
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(12, 105, 58, 0.5);
+    box-shadow: 0 0 0 0 rgba(201, 169, 110, 0.5);
   }
 
   50% {
-    box-shadow: 0 0 0 10px rgba(12, 105, 58, 0);
+    box-shadow: 0 0 0 10px rgba(201, 169, 110, 0);
   }
 }
 
@@ -126,11 +135,11 @@
 
   0%,
   100% {
-    border-color: rgba(12, 105, 58, 0.4);
+    border-color: rgba(201, 169, 110, 0.4);
   }
 
   50% {
-    border-color: rgba(12, 105, 58, 1);
+    border-color: rgba(201, 169, 110, 1);
   }
 }
 
@@ -225,7 +234,7 @@
 
   /* ── Theme selection ── */
   ::selection {
-    background: rgba(12, 105, 58, 0.15);
+    background: rgba(201, 169, 110, 0.15);
     color: var(--color-gold-dark);
   }
 }
@@ -252,7 +261,7 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    box-shadow: 0 4px 14px rgba(12, 105, 58, 0.35);
+    box-shadow: 0 4px 14px rgba(201, 169, 110, 0.35);
     text-transform: uppercase;
     white-space: nowrap;
   }
@@ -279,12 +288,12 @@
     color: var(--color-gold) !important;
     border-color: var(--color-gold);
     transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(12, 105, 58, 0.30);
+    box-shadow: 0 12px 28px rgba(201, 169, 110, 0.30);
   }
 
   .btn-gold:active {
     transform: translateY(0);
-    box-shadow: 0 4px 10px rgba(12, 105, 58, 0.20);
+    box-shadow: 0 4px 10px rgba(201, 169, 110, 0.20);
   }
 
   /* ══ OUTLINED RED BUTTON ══ */
@@ -314,7 +323,7 @@
     background: var(--color-gold) !important;
     color: #ffffff !important;
     transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(12, 105, 58, 0.30);
+    box-shadow: 0 12px 28px rgba(201, 169, 110, 0.30);
   }
 
   /* ══ DARK PRIMARY BUTTON (Now Gold Theme) ══ */
@@ -336,7 +345,7 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    box-shadow: 0 4px 14px rgba(12, 105, 58, 0.35);
+    box-shadow: 0 4px 14px rgba(201, 169, 110, 0.35);
     text-transform: uppercase;
     white-space: nowrap;
   }
@@ -346,36 +355,80 @@
     color: var(--color-gold) !important;
     border-color: var(--color-gold);
     transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(12, 105, 58, 0.30);
+    box-shadow: 0 12px 28px rgba(201, 169, 110, 0.30);
   }
 
   .btn-primary:active {
     transform: translateY(0);
-    box-shadow: 0 4px 10px rgba(12, 105, 58, 0.20);
+    box-shadow: 0 4px 10px rgba(201, 169, 110, 0.20);
+  }
+
+  /* ══ BRAND RED BUTTON (Krisumi style) ══ */
+  .btn-brand {
+    background: var(--color-brand);
+    color: #fff;
+    border: 2px solid var(--color-brand) !important;
+    padding: 14px 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: var(--font-jost), 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+    white-space: nowrap;
+  }
+
+  .btn-brand:hover {
+    background: #ffffff !important;
+    color: var(--color-brand) !important;
+    border-color: var(--color-brand) !important;
+    transform: translateY(-3px);
   }
 
   /* ══ FLOATING TAB ══ */
   .btn-floating-tab {
-    @apply btn-gold;
+    @apply btn-brand;
     position: fixed;
     right: 0;
     top: 50%;
     z-index: 40;
     transform: translateY(-50%) rotate(0deg);
-    border-radius: 8px 0 0 8px;
+    border-radius: 0 !important;
     writing-mode: vertical-rl;
-    padding: 16px 10px;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    box-shadow: -4px 0 18px rgba(12, 105, 58, 0.28);
+    padding: 20px 10px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    box-shadow: none !important;
+    filter: drop-shadow(-4px 0 14px rgba(201, 169, 110, 0.28));
+    border: 2px solid var(--color-brand) !important;
+    transition: all 0.3s ease !important;
   }
 
   .btn-floating-tab:hover {
-    transform: translateY(calc(-50% - 4px)) !important;
-    background: #fff !important;
-    color: var(--color-gold) !important;
-    border-color: var(--color-gold);
-    box-shadow: -6px 0 24px rgba(12, 105, 58, 0.35);
+    transform: translateY(-50%) rotate(0deg) !important;
+    background: #ffffff !important;
+    color: var(--color-brand) !important;
+    filter: drop-shadow(-6px 0 20px rgba(201, 169, 110, 0.35));
+  }
+
+  /* ══ GLOBAL BUTTON OVERRIDE (Gold Gradient) ══ */
+  .btn-gold, .btn-gold-outline, .btn-primary, .btn-brand {
+    background: linear-gradient(90deg, #D4AF37 0%, #F9E08A 100%) !important;
+    color: #111827 !important;
+    border-color: transparent !important;
+    font-weight: 800 !important;
+  }
+
+  .btn-gold:hover, .btn-gold-outline:hover, .btn-primary:hover, .btn-brand:hover {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border-color: #D4AF37 !important;
   }
 
   /* ══ SECTION TITLE ══ */
@@ -414,7 +467,7 @@
 
   .form-input:focus {
     border-color: var(--color-gold);
-    box-shadow: 0 0 0 3px rgba(12, 105, 58, 0.10), inset 0 1px 3px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.10), inset 0 1px 3px rgba(0, 0, 0, 0.04);
   }
 
   .form-input::placeholder {
@@ -447,7 +500,7 @@
   .pricing-card {
     background: #ffffff;
     border: 1.5px solid #f0f0f0;
-    border-radius: 16px;
+    border-radius: 8px;
     box-shadow: var(--shadow-card);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     position: relative;
@@ -469,7 +522,7 @@
   .pricing-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
-    border-color: rgba(12, 105, 58, 0.25);
+    border-color: rgba(201, 169, 110, 0.25);
   }
 
   .pricing-card:hover::after {
@@ -492,7 +545,7 @@
 
   .highlight-card:hover {
     border-color: var(--color-gold);
-    box-shadow: 0 8px 28px rgba(12, 105, 58, 0.15);
+    box-shadow: 0 8px 28px rgba(201, 169, 110, 0.15);
     transform: translateY(-4px);
   }
 
@@ -514,7 +567,7 @@
     border-color: var(--color-gold);
     background: var(--color-gold-bg);
     color: var(--color-gold);
-    box-shadow: 0 0 0 6px rgba(12, 105, 58, 0.08);
+    box-shadow: 0 0 0 6px rgba(201, 169, 110, 0.08);
   }
 
   /* ══ SECTION WRAPPER — white card on diamond bg ══ */
@@ -523,6 +576,39 @@
     backdrop-filter: blur(2px);
     border-radius: 20px;
     box-shadow: 0 4px 32px rgba(0, 0, 0, 0.06);
+  }
+
+  /* ══ BUTTON CONCAVE NOTCH DESIGN ══ */
+  .btn-gold, .btn-gold-outline, .btn-primary, .btn-brand, .btn-floating-tab {
+    border-radius: 0 !important;
+    -webkit-mask: 
+      radial-gradient(circle at 0 0, transparent 6px, black 6.5px) top left,
+      radial-gradient(circle at 100% 0, transparent 6px, black 6.5px) top right,
+      radial-gradient(circle at 0 100%, transparent 6px, black 6.5px) bottom left,
+      radial-gradient(circle at 100% 100%, transparent 6px, black 6.5px) bottom right;
+    -webkit-mask-size: 51% 51%;
+    -webkit-mask-repeat: no-repeat;
+    mask: 
+      radial-gradient(circle at 0 0, transparent 6px, black 6.5px) top left,
+      radial-gradient(circle at 100% 0, transparent 6px, black 6.5px) top right,
+      radial-gradient(circle at 0 100%, transparent 6px, black 6.5px) bottom left,
+      radial-gradient(circle at 100% 100%, transparent 6px, black 6.5px) bottom right;
+    mask-size: 51% 51%;
+    mask-repeat: no-repeat;
+  }
+
+  /* Convert box-shadow to filter drop-shadow because mask clips box-shadow */
+  .btn-gold, .btn-primary {
+    box-shadow: none !important;
+    filter: drop-shadow(0 4px 10px rgba(201, 169, 110, 0.35));
+  }
+  .btn-gold:hover, .btn-primary:hover, .btn-gold-outline:hover {
+    box-shadow: none !important;
+    filter: drop-shadow(0 8px 20px rgba(201, 169, 110, 0.30));
+  }
+  .btn-gold:active, .btn-primary:active {
+    box-shadow: none !important;
+    filter: drop-shadow(0 2px 6px rgba(201, 169, 110, 0.20));
   }
 }
 
@@ -547,7 +633,7 @@
   right: 0;
   z-index: 999;
   display: flex;
-  box-shadow: 0 -4px 20px rgba(12, 105, 58, 0.18);
+  box-shadow: 0 -4px 20px rgba(201, 169, 110, 0.18);
 }
 
 @media (min-width: 1024px) {
@@ -561,12 +647,12 @@ nav.fixed {
   background: rgba(255, 255, 255, 0.96) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(12, 105, 58, 0.08);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.08);
 }
 
 /* ─── Teal-Cyan focus ring globally ─────────────────────────────────── */
 *:focus-visible {
-  outline: 2px solid rgba(12, 105, 58, 0.5);
+  outline: 2px solid rgba(201, 169, 110, 0.5);
   outline-offset: 3px;
   border-radius: 4px;
 }

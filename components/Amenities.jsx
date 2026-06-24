@@ -13,8 +13,8 @@ const Amenities = ({ setIsOpen }) => {
   return (
     <section id="amenities" style={{
       padding: '56px 0',
-      background: '#ffffff',
-      borderBottom: '1px solid #f0f0f0',
+      background: '#fff',
+      borderBottom: '1px solid #e5e7eb',
     }}>
       <div className="container mx-auto px-4 md:px-8">
 
@@ -29,7 +29,7 @@ const Amenities = ({ setIsOpen }) => {
           }}>Eldeco Terra &amp; Sol — World-Class Amenities</span>
           <h2 style={{
             fontFamily: F_JOST, fontWeight: '800', fontSize: '26px',
-            color: '#111827', margin: '0 0 6px', letterSpacing: '-0.01em',
+            color: '#684C1B', margin: '0 0 6px', letterSpacing: '-0.01em',
           }}>
             Lifestyle &amp;{' '}
             <span style={{ color: 'var(--color-gold)' }}>Wellness Amenities</span>
@@ -40,7 +40,7 @@ const Amenities = ({ setIsOpen }) => {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {amenityImages.map((item, idx) => (
             <div
               key={idx}
