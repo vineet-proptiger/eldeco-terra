@@ -53,7 +53,7 @@ const VirtualTour = ({ setIsOpen }) => {
 
       {/* Background Image */}
       <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
-        <Image src={heroImages.banner2} alt="Virtual Tour" fill className="object-cover" />
+        <Image src={heroImages.banner2} alt="Virtual Tour" fill className="object-cover object-top" />
       </div>
 
       {/* Overlay */}

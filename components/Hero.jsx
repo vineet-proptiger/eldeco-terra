@@ -166,7 +166,7 @@ const Hero = ({ setIsOpen }) => {
         /* ─── Desktop ─── */
         @media (min-width: 1024px) {
           .hero-container {
-            aspect-ratio: 21/9;
+            aspect-ratio: 16/9;
           }
           .slide-layer {
             position: absolute;
@@ -175,7 +175,7 @@ const Hero = ({ setIsOpen }) => {
           .hero-image {
             height: 100%;
             object-fit: cover;
-            object-position: center 80%;
+            object-position: center top;
           }
         }
 
@@ -202,7 +202,7 @@ const Hero = ({ setIsOpen }) => {
         /* ─── Tablet ─── */
         @media (min-width: 768px) and (max-width: 1023px) {
           .hero-container {
-            aspect-ratio: 16/7;
+            aspect-ratio: 16/9;
           }
           .slide-layer {
             position: absolute;
@@ -211,7 +211,7 @@ const Hero = ({ setIsOpen }) => {
           .hero-image {
             height: 100%;
             object-fit: cover;
-            object-position: center 80%;
+            object-position: center top;
           }
           .hero-content {
             padding: 0 28px 56px !important;
