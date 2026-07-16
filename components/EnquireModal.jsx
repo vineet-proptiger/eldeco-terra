@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 // import Image from 'next/image'
 import { X } from 'lucide-react'
 import LeadForm from './LeadForm'
@@ -8,12 +8,18 @@ import LeadForm from './LeadForm'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 
 const EnquireModal = ({ isOpen, setIsOpen }) => {
+  const hasTriggeredInitial = useRef(false)
+
   useEffect(() => {
     let timer;
     if (!isOpen) {
+      const delay = hasTriggeredInitial.current ? 30000 : 12000;
       timer = setTimeout(() => {
+        hasTriggeredInitial.current = true;
         setIsOpen(true);
-      }, 30000);
+      }, delay);
+    } else {
+      hasTriggeredInitial.current = true;
     }
     return () => {
       if (timer) clearTimeout(timer);
