@@ -5,11 +5,15 @@ const VirtualTour = ({ setIsOpen }) => {
   const [isPlaying, setIsPlaying] = useState(false)
   const videoRef = useRef(null)
 
-  const handlePlay = () => {
+  const handlePlay = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setIsPlaying(true)
     if (videoRef.current) {
       videoRef.current.currentTime = 0
-      videoRef.current.play()
+      videoRef.current.play().catch((err) => console.warn("Video play error:", err))
     }
   }
 
@@ -65,6 +69,7 @@ const VirtualTour = ({ setIsOpen }) => {
         <video 
           ref={videoRef}
           src="/images/video/eldeco_video.mp4" 
+          preload="auto"
           playsInline 
           controls={isPlaying}
           className="w-full h-full object-contain bg-black"
