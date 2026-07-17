@@ -32,8 +32,10 @@ const VirtualTour = ({ setIsOpen }) => {
           background: #fff;
           border: 4px solid var(--color-gold);
           z-index: 10;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transition: all 0.3s ease;
           box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+          animation: btn-breathe 2s infinite ease-in-out;
+          cursor: pointer;
         }
         @media (min-width: 768px) {
           .vt-play-btn {
@@ -41,9 +43,14 @@ const VirtualTour = ({ setIsOpen }) => {
             height: 90px;
           }
         }
+        @keyframes btn-breathe {
+          0%, 100% { transform: scale(1); box-shadow: 0 4px 14px rgba(0,0,0,0.3); }
+          50% { transform: scale(1.08); box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2); }
+        }
         .vt-play-btn:hover {
-          transform: scale(1.05);
-          box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+          transform: scale(1.15) !important;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+          animation-play-state: paused;
         }
         .ripple-ring {
           position: absolute;
@@ -69,6 +76,7 @@ const VirtualTour = ({ setIsOpen }) => {
         <video 
           ref={videoRef}
           src="/images/video/eldeco_video.mp4" 
+          poster="/images/hero/banner2.webp"
           preload="auto"
           playsInline 
           controls={isPlaying}
