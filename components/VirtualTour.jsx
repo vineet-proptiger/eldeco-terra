@@ -29,11 +29,11 @@ const VirtualTour = ({ setIsOpen }) => {
           align-items: center;
           justify-content: center;
           border-radius: 50%;
-          background: #fff;
-          border: 4px solid var(--color-gold);
+          background: linear-gradient(135deg, #D4AF37 0%, #F9E08A 100%);
+          border: 2px solid rgba(255, 255, 255, 0.8);
           z-index: 10;
           transition: all 0.3s ease;
-          box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+          box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.6);
           animation: btn-breathe 2s infinite ease-in-out;
           cursor: pointer;
         }
@@ -57,7 +57,7 @@ const VirtualTour = ({ setIsOpen }) => {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          border: 2px solid var(--color-gold);
+          border: 2px solid #D4AF37;
           border-radius: 50%;
           animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
           pointer-events: none;
@@ -97,7 +97,7 @@ const VirtualTour = ({ setIsOpen }) => {
           <div className="relative mb-6 flex items-center justify-center z-20">
             <div className="vt-play-btn">
               {/* Play triangle */}
-              <svg className="w-8 h-8 md:w-10 md:h-10 ml-1 md:ml-2" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="var(--color-gold)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+              <svg className="w-8 h-8 md:w-10 md:h-10 ml-1 md:ml-2" viewBox="0 0 24 24" fill="#111827" stroke="#111827" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="5 3 19 12 5 21 5 3" />
               </svg>
             </div>
