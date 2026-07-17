@@ -74,41 +74,43 @@ const VirtualTour = ({ setIsOpen }) => {
           preload="auto"
           playsInline 
           controls={isPlaying}
-          className="w-full h-full object-contain bg-black"
+          className="w-full h-full object-cover bg-black"
         />
       </div>
 
       {/* Overlay and Content - Only show when NOT playing */}
       {!isPlaying && (
         <div 
-          className="absolute inset-0 z-10 flex flex-col items-center justify-center cursor-pointer"
+          className="absolute inset-0 z-10 cursor-pointer"
           onClick={handlePlay}
         >
           {/* Dark Overlay Background */}
           <div className="absolute inset-0 bg-black/20 transition-all duration-500 group-hover:bg-black/30" />
 
-          {/* Play Icon Circle */}
-          <div className="relative mb-6 flex items-center justify-center z-20">
-            <div className="vt-play-btn">
-              {/* Play triangle */}
-              <svg className="w-8 h-8 md:w-10 md:h-10 ml-1 md:ml-2" viewBox="0 0 24 24" fill="#111827" stroke="#111827" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="5 3 19 12 5 21 5 3" />
-              </svg>
+          {/* Centered Play Button Container */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center z-20">
+            <div className="relative flex items-center justify-center">
+              <div className="vt-play-btn">
+                {/* Play triangle */}
+                <svg className="w-8 h-8 md:w-10 md:h-10 ml-[2px] md:ml-1" viewBox="0 0 24 24" fill="#111827" stroke="#111827" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+              </div>
+              <div className="ripple-ring"></div>
+              <div className="ripple-ring"></div>
             </div>
-            <div className="ripple-ring"></div>
-            <div className="ripple-ring"></div>
-          </div>
 
-          {/* Text */}
-          <h2 style={{
-            fontFamily: 'var(--font-sans), Open Sans, sans-serif',
-            fontWeight: '700',
-            letterSpacing: '0.15em',
-            textTransform: 'uppercase',
-            margin: 0
-          }} className="text-[26px] md:text-[36px] drop-shadow-md text-white z-20">
-            VIRTUAL TOUR
-          </h2>
+            {/* Text placed absolutely below so it doesn't push the button up */}
+            <h2 style={{
+              fontFamily: 'var(--font-sans), Open Sans, sans-serif',
+              fontWeight: '700',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              margin: 0
+            }} className="absolute top-[100%] mt-5 md:mt-8 text-[22px] md:text-[36px] drop-shadow-md text-white whitespace-nowrap">
+              VIRTUAL TOUR
+            </h2>
+          </div>
         </div>
       )}
     </section>
