@@ -32,9 +32,8 @@ const VirtualTour = ({ setIsOpen }) => {
           background: linear-gradient(135deg, #D4AF37 0%, #F9E08A 100%);
           border: 2px solid rgba(255, 255, 255, 0.8);
           z-index: 10;
-          transition: all 0.3s ease;
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.6);
-          animation: btn-breathe 2s infinite ease-in-out;
           cursor: pointer;
         }
         @media (min-width: 768px) {
@@ -43,14 +42,9 @@ const VirtualTour = ({ setIsOpen }) => {
             height: 90px;
           }
         }
-        @keyframes btn-breathe {
-          0%, 100% { transform: scale(1); box-shadow: 0 4px 14px rgba(0,0,0,0.3); }
-          50% { transform: scale(1.08); box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2); }
-        }
         .vt-play-btn:hover {
-          transform: scale(1.15) !important;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-          animation-play-state: paused;
+          transform: scale(1.12);
+          box-shadow: 0 12px 30px rgba(212, 175, 55, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.8);
         }
         .ripple-ring {
           position: absolute;
